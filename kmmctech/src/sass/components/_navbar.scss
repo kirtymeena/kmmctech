@@ -1,0 +1,150 @@
+@use "../utils/variables" as *;
+@use "../utils/breakpoint" as *;
+
+%nav-items {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  font-size: 13px;
+  width: 100%;
+  align-items: center;
+}
+
+.nav__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+}
+.nav__items {
+  position: relative;
+  width: fit-content;
+}
+
+// mobile view
+.nav__items-sm {
+  cursor: pointer;
+}
+.sidebar {
+  display: block;
+}
+.sidebar__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+// desktop view
+.nav__items-lg {
+  display: none;
+}
+
+@include lg {
+  .sidebar {
+    display: none;
+  }
+  .nav__items-sm {
+    display: none;
+  }
+  .nav__items-lg {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 13px;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.nav__items-left {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+}
+
+.item {
+  padding: 0.5rem;
+  padding-inline: 1rem;
+
+  .link {
+    color: $neutral-800 !important;
+  }
+}
+.nav__items-left {
+  display: flex;
+  gap: 1rem;
+  width: 36rem;
+}
+
+.nav__items-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.item > link {
+  padding: 1rem;
+}
+.item :hover {
+  border-bottom: 3px solid #024798;
+  width: auto;
+}
+.item > .link:hover::before {
+  display: block;
+  content: "";
+  border-bottom: none;
+  width: auto;
+}
+
+.black {
+  color: $neutral-800 !important;
+}
+
+.logo {
+  width: 5rem;
+  height: 3rem;
+  object-fit: cover;
+}
+
+// pr
+.p-megamenu-root-list {
+  gap: 1rem;
+}
+
+.p-menuitem {
+  // padding: 1rem;
+  // border: 1px solid red;
+}
+
+.p-menuitem-link {
+  padding: 0.5rem;
+}
+
+.p-megamenu-end {
+  padding: 0.5rem;
+}
+
+.p-inputtext {
+  padding: 0.5rem;
+}
+
+.p-megamenu-submenu {
+  padding: 1rem;
+  margin-left:2rem;
+  margin-top:1rem
+}
+
+.p-menuitem-text {
+  font-weight: 600;
+  color: $neutral-800;
+}
+.p-menuitem-text[data-pc-section="label"] {
+  font-weight: 400;
+}
+
+#pr_id_3_sub_0{
+  cursor: pointer;
+}

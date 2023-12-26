@@ -1,0 +1,71 @@
+@use "../utils/variables" as *;
+@use "../utils/breakpoint" as *;
+
+.ps__card-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+  justify-content: center;
+  @include md {
+    width: 80%;
+  }
+}
+
+.ps__card-full {
+  background-color: $zinc-300;
+  border-radius: 4px;
+  width: 100%;
+  @include md {
+    width: 100%;
+  }
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+  .link {
+    color: $black-900;
+  }
+  .link:hover {
+    color: $sky-blue;
+  }
+}
+.view__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.ps__card {
+  background-color: $zinc-300;
+  height: 18rem;
+  width: 49%;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+  @include md {
+    width: 49%;
+  }
+  .link {
+    color: $black-900;
+  }
+  .link:hover {
+    color: $sky-blue;
+  }
+  .link:active {
+    color: $dark-blue;
+  }
+}
+
+.ps__image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}

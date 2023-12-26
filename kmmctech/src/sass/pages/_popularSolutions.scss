@@ -1,0 +1,17 @@
+@use "../utils/variables" as *;
+
+.ps__wrapper{
+    padding-block:4rem;
+}
+
+.ps__header{
+    text-align: center;
+    color:$black-900;
+    padding-block:2rem;
+}
+
+.ps__body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

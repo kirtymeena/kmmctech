@@ -1,0 +1,41 @@
+@use "../utils/breakpoint" as *;
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f3f3f3;
+  gap: 1rem;
+  cursor: pointer;
+  transition: 0.2s box-shadow ease-in-out;
+  background-color: #ffffff;
+  width: 16rem;
+  height: 26rem;
+  @include lg {
+    width: 19rem;
+    height: 26rem;
+  }
+}
+
+.card__wrapper:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.card__image {
+  background-color: #f4f4f4;
+  height: 17rem;
+  img {
+    height: 100%;
+  }
+}
+.card__body {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding-inline: 0.5rem;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d9add;
+}

@@ -1,0 +1,25 @@
+@use "../utils/breakpoint" as *;
+.nav {
+  height: 3rem;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+  height: 4rem;
+}
+
+.nav__scroll {
+  background-color: #ffffff;
+  border-bottom: 1px solid #d1d5db;
+}
+.nav__normal {
+  background-color: #ffffff;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.layout {
+  width: 100%;
+  @include xxlg {
+    width: 100rem;
+    margin: 0 auto;
+  }
+}

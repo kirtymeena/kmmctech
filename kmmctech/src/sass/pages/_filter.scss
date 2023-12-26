@@ -1,0 +1,15 @@
+.p-accordion .p-accordion-tab {
+  width: 15rem !important;
+  min-height: 2rem;
+}
+.p-accordion-header,
+.p-accordion-header-link {
+  height: 4rem;
+}
+
+.p-accordion-header-link {
+  display: flex;
+  gap: 1rem;
+  background: none;
+  padding-inline: 1rem;
+}

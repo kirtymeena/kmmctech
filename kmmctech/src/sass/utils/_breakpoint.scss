@@ -1,0 +1,32 @@
+@mixin xsm {
+  @media only screen and (width<576px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media only screen and (width>=576px) {
+    @content;
+  }
+}
+@mixin md {
+  @media only screen and (width>=768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media only screen and (width>992px) {
+    @content;
+  }
+}
+@mixin xlg {
+  @media only screen and (width>1200px) {
+    @content;
+  }
+}
+@mixin xxlg {
+  @media only screen and (width>2000px) {
+    @content;
+  }
+}
