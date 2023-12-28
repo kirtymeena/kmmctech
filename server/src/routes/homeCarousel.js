@@ -3,15 +3,17 @@ const homecarousel = require("../models/homeCarousel");
 
 router.get("/sliderImages",async(req,res)=>{
     try{
-        const sliderData = await homecarousel.find({});
+        const sliderData = await homecarousel.find();
         if(sliderData){
             sliderData.sort((a,b)=>a.sortOrder-b.sortOrder)
             res.status(200).json(sliderData)
+        }else{
+            res.status(404).json({ message: "Products not found" });
         }
-        res.status(400)
+
     }
     catch(err){
-        res.status(500)
+        res.status(500).json({ message: "Internal server error" });
     }
 })
 

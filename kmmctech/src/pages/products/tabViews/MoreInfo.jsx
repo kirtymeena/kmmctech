@@ -13,21 +13,6 @@ function MoreInfo({ moreInfo }) {
         leftData = moreInfo
     }
 
-
-    const rightSpecs = () => {
-        return (
-            rightData && rightData.map((data) =>
-                Object.keys(data).map(key =>
-                    <div key={key} style={{ width: "100%" }}>
-                        <h2 className='header-top'>{key}</h2>
-                        <ul className='inner__specs'>
-
-                        </ul>
-                    </div >
-                )
-            )
-        )
-    }
     console.log(leftData, rightData)
     return (
         <div className='specs__wrapper'>
@@ -76,7 +61,7 @@ function MoreInfo({ moreInfo }) {
                                                             }</ul>
                                                         :
                                                         <span> {specVal}</span>
-                                                        }</p>
+                                                    }</p>
                                             </li>
 
                                         )

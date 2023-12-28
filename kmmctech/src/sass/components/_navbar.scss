@@ -120,7 +120,9 @@
 }
 
 .p-menuitem-link {
-  padding: 0.5rem;
+  // padding: 0.5rem;
+  padding-block: 0.5rem;
+  text-align: left;
 }
 
 .p-megamenu-end {
@@ -130,11 +132,13 @@
 .p-inputtext {
   padding: 0.5rem;
 }
-
+.p-megamenu .p-megamenu-submenu-header {
+  padding-top: 1rem !important;
+}
 .p-megamenu-submenu {
   padding: 1rem;
-  margin-left:2rem;
-  margin-top:1rem
+  margin-left: 2rem;
+  margin-top: 1rem;
 }
 
 .p-menuitem-text {
@@ -145,6 +149,6 @@
   font-weight: 400;
 }
 
-#pr_id_3_sub_0{
+#pr_id_3_sub_0 {
   cursor: pointer;
 }

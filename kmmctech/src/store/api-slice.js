@@ -33,4 +33,4 @@ export const apiSlice = createApi({
     }
     }
 });
-export const { useFetchNavItemsQuery,useFetchCarouselDataQuery,useFetchProductsByCategoryQuery,useFetchProductByIdQuery} = apiSlice;
+export const { useFetchNavItemsQuery,useFetchCarouselDataQuery,useFetchProductsByCategoryQuery,useFet} = apiSlice;

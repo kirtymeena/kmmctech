@@ -8,73 +8,73 @@ import { Link } from "react-router-dom";
 function Navbar() {
     const navigate = useNavigate();
     const items = [
-        {
-            label: "Solutions",
-            icon: "pi pi-fw pi-video",
-            items: [
-                [
-                    {
-                        label: "Eduction Solutions",
-                        url: "/Videos",
-                        items: [
-                            {
-                                label: "Classroom",
-                                command: () => {
-                                    navigate(`/Education Solutions/Classroom`);
-                                },
-                            },
-                            {
-                                label: "Tech Labs",
-                                command: () => {
-                                    navigate(`/Education Solutions/Tech Labs`);
-                                },
-                            },
-                            {
-                                label: "Remote Learning",
-                                command: () => {
-                                    navigate(`/Education Solutions/Remote Learning`);
-                                },
-                            },
-                            {
-                                label: "Works with Chromebook",
-                                command: () => {
-                                    navigate(`/Education Solutions/Works With Chromebook`);
-                                },
-                            },
-                        ],
-                    },
-                ],
-                [
-                    {
-                        label: "Business Solutions",
-                        items: [
-                            {
-                                label: "Workspace & Cubes",
-                                command: () => {
-                                    navigate(`/Business Solutions/Workspace & Cubes`);
-                                },
-                            },
-                            {
-                                label: "Conference Rooms",
-                                command: () => {
-                                    navigate(`/Business Solutions/Conference Rooms`);
-                                },
-                            },
-                            {
-                                label: "Remote Working", command: () => {
-                                    navigate(`/Business Solutions/Remote Working`);
-                                },
-                            },
-                            {
-                                label: "Business Travel", command: () => {
-                                    navigate(`/Business Solutions/Business Travel`);
-                                },
-                            },
-                        ],
-                    },
-                ],
-            ],
-        },
+        // {
+        //     label: "Solutions",
+        //     icon: "pi pi-fw pi-video",
+        //     items: [
+        //         [
+        //             {
+        //                 label: "Eduction Solutions",
+        //                 url: "/Videos",
+        //                 items: [
+        //                     {
+        //                         label: "Classroom",
+        //                         command: () => {
+        //                             navigate(`/Education Solutions/Classroom`);
+        //                         },
+        //                     },
+        //                     {
+        //                         label: "Tech Labs",
+        //                         command: () => {
+        //                             navigate(`/Education Solutions/Tech Labs`);
+        //                         },
+        //                     },
+        //                     {
+        //                         label: "Remote Learning",
+        //                         command: () => {
+        //                             navigate(`/Education Solutions/Remote Learning`);
+        //                         },
+        //                     },
+        //                     {
+        //                         label: "Works with Chromebook",
+        //                         command: () => {
+        //                             navigate(`/Education Solutions/Works With Chromebook`);
+        //                         },
+        //                     },
+        //                 ],
+        //             },
+        //         ],
+        //         [
+        //             {
+        //                 label: "Business Solutions",
+        //                 items: [
+        //                     {
+        //                         label: "Workspace & Cubes",
+        //                         command: () => {
+        //                             navigate(`/Business Solutions/Workspace & Cubes`);
+        //                         },
+        //                     },
+        //                     {
+        //                         label: "Conference Rooms",
+        //                         command: () => {
+        //                             navigate(`/Business Solutions/Conference Rooms`);
+        //                         },
+        //                     },
+        //                     {
+        //                         label: "Remote Working", command: () => {
+        //                             navigate(`/Business Solutions/Remote Working`);
+        //                         },
+        //                     },
+        //                     {
+        //                         label: "Business Travel", command: () => {
+        //                             navigate(`/Business Solutions/Business Travel`);
+        //                         },
+        //                     },
+        //                 ],
+        //             },
+        //         ],
+        //     ],
+        // },
         {
             label: "Products",
             icon: "pi pi-fw pi-users",
@@ -93,58 +93,20 @@ function Navbar() {
                         }],
                     },
                     {
-                        label: <Link to="products/Bags" className="prod__link" style={{paddingTop:"1rem"}}>Personal Computers</Link>,
-                        items: [
-                            //     {
-                            //     label: "Bagpacks", command: () => {
-                            //         navigate(`products/Bags/Bagpacks`);
-                            //     },
-                            // }
-                        ],
+                        label: <Link to="products/Personal Computers" className="prod__link" style={{ paddingTop: "1rem" }}>Personal Computers</Link>,
+                        items: [],
                     },
                 ],
                 [
                     {
-                        label: <Link to="products/Interactive Flat Panel" className="prod__link">Camera</Link>,
-                        items: [
-                            // {
-                            //     label: "Keyboards", command: () => {
-                            //         navigate(`/products/Input Devices/Keyboards`);
-                            //     },
-                            // },
-                            // {
-                            //     label: "Web Cam", command: () => {
-                            //         navigate(`/products/Input Devices/Web Cam`);
-                            //     },
-                            // },
-                            // {
-                            //     label: "Mouse", command: () => {
-                            //         navigate(`/products/Input Devices/Mouse`);
-                            //     },
-                            // },
-                        ],
+                        label: <Link to="products/Camera" className="prod__link">Camera</Link>,
+                        items: [],
                     },
                 ],
                 [
                     {
-                        label: <Link to="products/Interactive Flat Panel" className="prod__link">Ops</Link>,
-                        items: [
-                            // {
-                            //     label: "Keyboards", command: () => {
-                            //         navigate(`/products/Input Devices/Keyboards`);
-                            //     },
-                            // },
-                            // {
-                            //     label: "Web Cam", command: () => {
-                            //         navigate(`/products/Input Devices/Web Cam`);
-                            //     },
-                            // },
-                            // {
-                            //     label: "Mouse", command: () => {
-                            //         navigate(`/products/Input Devices/Mouse`);
-                            //     },
-                            // },
-                        ],
+                        label: <Link to="products/Ops" className="prod__link">Ops</Link>,
+                        items: [],
                     },
                 ],
             ],
@@ -192,19 +154,6 @@ function Navbar() {
                     }}
                 />
             }
-            {/* <div className="logo">
-                <img src={logo} alt="kmmctech" className="logo" />
-            </div>
-            <div className="nav__items-wrapper">
-                {
-                    !isFetching &&
-
-                    <NavItems navItems={data} textColor={textColor} />
-                }
-                <div>
-                    <SearchBar />
-                </div> */}
-            {/* </div> */}
         </nav>
     );
 }

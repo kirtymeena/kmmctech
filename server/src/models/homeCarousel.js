@@ -5,4 +5,4 @@ const homeCarouselSchema = new mongoose.Schema({
     sortOrder:Number
 })
 
-module.exports = mongoose.model("homeCarousels",homeCarouselSchema)
+module.exports = mongoose.model("carousels",homeCarouselSchema)

@@ -9,6 +9,11 @@ function ProductsList() {
     // const [filterOptions, setFilterOptions] = useState([])
     const category = location.pathname.split("/").length === 4 ? location.pathname.split("/")[2] + '/' + location.pathname.split("/")[3] : location.pathname.split("/")[2]
     const { data } = useFetchProductsByCategoryQuery(category)
+
+
+    useEffect(() => {
+        console.log("Cat", data)
+    })
     // const filteringOptions = extractFilterOptions(data);
     function extractFilterOptions(products) {
         const filterOptions = {};
@@ -38,11 +43,7 @@ function ProductsList() {
         console.log(filterOptions)
         return filterOptions;
     }
-    useEffect(() => {
-        if (data) {
-            // extractFilterOptions(data)
-        }
-    }, [data])
+
 
     // const onFilterSelection = (e) => {
     //     const filterName = e.target.name;
@@ -59,7 +60,13 @@ function ProductsList() {
                 </div>
             )
         }
-        else if (location.pathname.replace(/%20/g, " ").includes("Bags")) {
+        else if (location.pathname.replace(/%20/g, " ").includes("Camera")) {
+            return <img src="https://www.v7world.com/media/wysiwyg/CPBX16-01.png" alt="product-hero" />
+        }
+        else if (location.pathname.replace(/%20/g, " ").includes("Personal Computers")) {
+            return <img src="https://www.v7world.com/media/wysiwyg/CPBX16-01.png" alt="product-hero" />
+        }
+        else if (location.pathname.replace(/%20/g, " ").includes("Ops")) {
             return <img src="https://www.v7world.com/media/wysiwyg/CPBX16-01.png" alt="product-hero" />
         }
     }
