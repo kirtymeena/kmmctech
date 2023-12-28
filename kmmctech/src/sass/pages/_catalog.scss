@@ -1,0 +1,46 @@
+.catalog__wrapper {
+  display: flex;
+  flex-direction: column;
+  //   gap: 2rem;
+}
+
+.files {
+  //   width: 100%;
+  display: flex;
+  padding-top: 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.file__container {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid #777777;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .download-link {
+  }
+}
+.file-download {
+  display: flex;
+  font-size: 17px;
+  gap: 1rem;
+  font-weight: 600;
+  color: #4b5563;
+  align-items: center;
+}
+.file-download:hover{
+    color:black
+}
+.file__name {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.pdf {
+  position: absolute;
+  right: 0.2rem;
+  top:0.1rem;
+}

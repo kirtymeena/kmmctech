@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store.js';
 import "./sass/main.scss"
 import "primereact/resources/themes/lara-light-cyan/theme.css";
+import "/node_modules/primeflex/primeflex.css"
 import "primereact/resources/primereact.min.css";
 // import "primeicons/primeicons.css";
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -13,3 +13,16 @@
   background: none;
   padding-inline: 1rem;
 }
+
+.filter__container {
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.filter__options {
+  display: flex;
+  gap: 0.5rem;
+}

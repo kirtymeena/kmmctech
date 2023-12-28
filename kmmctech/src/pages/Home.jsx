@@ -4,7 +4,7 @@ import PopularSolutions from "./popularSolutions/PopularSolutions"
 function Home() {
     return (
         <div>
-            {/* <Slider /> */}
+            <Slider />
             <div className="home__body">
                 <PopularSolutions />
             </div>

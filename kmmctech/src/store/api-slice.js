@@ -15,17 +15,22 @@ export const apiSlice = createApi({
                 return '/navItems'
             }
         }),
-        // fetchCarouselData:builder.query({
-        //     query(){
-        //         return "/sliderImages"
-        //     }
-        // }),
+        fetchCarouselData:builder.query({
+            query(){
+                return "/sliderImages"
+            }
+        }),
         fetchProductsByCategory:builder.query({
             query(category){
                 return `/products/${category}`
+            }
+        }),
+        fetchProductById:builder.query({
+            query(id){
+                return `/product/${id}`
             }
         })
     }
     }
 });
-export const { useFetchNavItemsQuery,useFetchCarouselDataQuery,useFetchProductsByCategoryQuery} = apiSlice;
+export const { useFetchNavItemsQuery,useFetchCarouselDataQuery,useFetchProductsByCategoryQuery,useFetchProductByIdQuery} = apiSlice;

@@ -4,7 +4,8 @@ import Error from "./pages/Error";
 import Navbar from "./components/navbar/Navbar";
 import { useEffect, useState } from "react";
 import Footer from "./pages/Footer";
-import Products from "./pages/products/ProductsList";
+import ProductsList from "./pages/products/ProductsList";
+import ProductsDetails from "./pages/products/ProductsDetails";
 
 function App() {
   const [scrollY, setScrollY] = useState(0)
@@ -35,7 +36,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout location={window.location.pathname} />}>
           <Route path="/" element={<Home />} />
-          <Route path="/products/:category/:subCategory?" element={<Products />} />
+          <Route path="/products/:category/:subCategory?" element={<ProductsList />} />
+          <Route path="/product/:id" element={<ProductsDetails />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>

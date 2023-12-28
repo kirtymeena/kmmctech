@@ -4,8 +4,8 @@ import { useFetchCarouselDataQuery } from "../store/api-slice";
 function Slider() {
     const scrollLeft = useRef(null)
     const [slidLength, setSlideLength] = useState(1);
-    const { data, error,isFetching } = useFetchCarouselDataQuery()
-  
+    const { data } = useFetchCarouselDataQuery()
+
     const slide = () => {
         if ((slidLength > 0 || slidLength === 1) && scrollLeft !== null) {
             setSlideLength(slidLength - 1)
@@ -21,7 +21,7 @@ function Slider() {
     useEffect(() => {
         let interval;
         interval = setInterval(slide, 3000)
-        console.log("data",data)
+        console.log("data", data)
         return () => clearInterval(interval)
     })
 

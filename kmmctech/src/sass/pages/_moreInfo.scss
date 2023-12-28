@@ -1,0 +1,59 @@
+@use "../utils/breakpoint" as *;
+
+.specs__wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @include sm {
+    flex-direction: row;
+    .spec__left,
+    .spec__right {
+      width: 100%;
+      border: 2px solid red;
+    }
+  }
+  @include md {
+    div {
+      width: 48%;
+    }
+  }
+  .divider {
+    display: none;
+    @include md {
+      display: block;
+    }
+    width: 4%;
+  }
+}
+.specs__right {
+  position: relative;
+}
+
+.inner__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inner__specs {
+  //   border: 2px solid red;
+  min-width: 100%;
+  padding-block: 0.5rem;
+  li {
+    list-style-type: none;
+  }
+}
+.header-top {
+  padding-top: 1rem;
+}
+.key-bold {
+  color: black;
+  font-weight: 500;
+}
+
+.inner__list {
+  padding-left: 1rem;
+  li {
+    list-style-type: disc !important;
+  }
+}

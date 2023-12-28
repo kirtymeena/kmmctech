@@ -1,5 +1,12 @@
 @use "../utils/breakpoint" as *;
 
+.product__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .products__wrapper {
   min-height: calc(100vh - 5rem);
   padding-top: 3.9rem;
@@ -11,6 +18,7 @@
 .products__hero {
   width: 100%;
   height: 90%;
+  position: relative;
 
   @include md {
     height: 40%;
@@ -44,22 +52,62 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 4rem;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
   width: 100%;
   padding-block: 2rem;
-  // border: 2px solid rgb(217, 194, 198);
+
   @include sm {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-inline: 3rem;
+    width: 100%;
+    justify-content: flex-start;
+
+  }
+  @include lg {
+    display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-inline: 2rem;
+
     gap: 2rem;
+    padding-inline: 3rem;
+    width: 100%;
+  }
+  // border: 2px solid rgb(217, 194, 198);
+  @include xlg {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-inline: 3rem;
+    width: 80rem;
+    gap: 7rem;
   }
 }
 
-
-.prod__link{
-  color:#374151;
+.prod__link {
+  color: #374151;
   text-decoration: none;
+}
+
+.float-text {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  color: azure;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 600;
+  font-size: 36px;
+  @include md {
+    font-size: 50px;
+  }
+}
+
+.color-inherit{
+  color:inherit
 }

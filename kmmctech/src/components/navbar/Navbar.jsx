@@ -93,33 +93,57 @@ function Navbar() {
                         }],
                     },
                     {
-                        label: "Bags",
-                        items: [{
-                            label: "Bagpacks", command: () => {
-                                navigate(`products/Bags/Bagpacks`);
-                            },
-                        }],
+                        label: <Link to="products/Bags" className="prod__link" style={{paddingTop:"1rem"}}>Personal Computers</Link>,
+                        items: [
+                            //     {
+                            //     label: "Bagpacks", command: () => {
+                            //         navigate(`products/Bags/Bagpacks`);
+                            //     },
+                            // }
+                        ],
                     },
                 ],
                 [
                     {
-                        label: "Input Devices",
+                        label: <Link to="products/Interactive Flat Panel" className="prod__link">Camera</Link>,
                         items: [
-                            {
-                                label: "Keyboards", command: () => {
-                                    navigate(`/products/Input Devices/Keyboards`);
-                                },
-                            },
-                            {
-                                label: "Web Cam", command: () => {
-                                    navigate(`/products/Input Devices/Web Cam`);
-                                },
-                            },
-                            {
-                                label: "Mouse", command: () => {
-                                    navigate(`/products/Input Devices/Mouse`);
-                                },
-                            },
+                            // {
+                            //     label: "Keyboards", command: () => {
+                            //         navigate(`/products/Input Devices/Keyboards`);
+                            //     },
+                            // },
+                            // {
+                            //     label: "Web Cam", command: () => {
+                            //         navigate(`/products/Input Devices/Web Cam`);
+                            //     },
+                            // },
+                            // {
+                            //     label: "Mouse", command: () => {
+                            //         navigate(`/products/Input Devices/Mouse`);
+                            //     },
+                            // },
+                        ],
+                    },
+                ],
+                [
+                    {
+                        label: <Link to="products/Interactive Flat Panel" className="prod__link">Ops</Link>,
+                        items: [
+                            // {
+                            //     label: "Keyboards", command: () => {
+                            //         navigate(`/products/Input Devices/Keyboards`);
+                            //     },
+                            // },
+                            // {
+                            //     label: "Web Cam", command: () => {
+                            //         navigate(`/products/Input Devices/Web Cam`);
+                            //     },
+                            // },
+                            // {
+                            //     label: "Mouse", command: () => {
+                            //         navigate(`/products/Input Devices/Mouse`);
+                            //     },
+                            // },
                         ],
                     },
                 ],
@@ -138,7 +162,7 @@ function Navbar() {
             },
         },
     ];
-    const start = <img alt="logo" src={logo} height="40" className="mr-2"></img>;
+    const start = <Link to="/"><img alt="logo" src={logo} height="40" className="mr-2"></img></Link>
 
     const end = <InputText placeholder="Search" type="text" />;
 
