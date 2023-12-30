@@ -10,7 +10,8 @@ import ProductsList from "./pages/products/ProductsList";
 import ProductsDetails from "./pages/products/ProductsDetails";
 import Contact from "./pages/Support";
 import About from "./pages/About";
-import Warranty from "./pages/filters/Warranty";
+import Warranty from "./pages/Warranty";
+import WarrantyDetails from "./pages/WarrantyDetails";
 
 function App() {
   const [navColor, setNavColor] = useState(false)
@@ -57,6 +58,7 @@ function App() {
           <Route path="/support" element={<Contact />} />
           <Route path="/support/warranty" element={<Warranty />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/warranty/product/:serialNumber" element={<WarrantyDetails />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>

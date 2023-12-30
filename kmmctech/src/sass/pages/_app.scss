@@ -5,6 +5,10 @@
   width: 100%;
   z-index: 20;
   height: 4rem;
+  @include xxlg {
+    width: 100rem;
+    margin: 0 auto;
+  }
   // background-color: white;
 }
 

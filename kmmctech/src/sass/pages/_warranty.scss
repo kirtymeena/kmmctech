@@ -1,0 +1,122 @@
+@use "../utils/breakpoint" as *;
+
+.w__wrapper {
+  padding-top: 4rem;
+  position: relative;
+  height: 100vh;
+  min-width: 100%;
+}
+
+.w__header {
+  //   position: relative;
+  width: 100%;
+  height: 14rem;
+  font-size: 30px;
+  color: whitesmoke;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, #1e5799 0%, #2989d8 50%, #7db9e8 100%);
+}
+
+.w__form {
+  width: 100%;
+  position: absolute;
+  top: 16rem;
+  //   border: 2px solid green;
+}
+.line {
+  color: rgba(246, 246, 246, 0.425);
+}
+.form__wrapper {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding-block: 2rem;
+  margin: 0 auto;
+  background-color: white;
+  padding-inline: 1rem;
+  //   border: 2px solid red;
+  text-align: center;
+  height: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include md {
+    width: 70%;
+  }
+  @include lg {
+    width: 50%;
+  }
+}
+
+.form__header {
+  font-size: 19px;
+  width: 100%;
+  font-weight: 600;
+  //   padding-bottom: 2rem;
+}
+.form__header:after {
+  display: block;
+  content: "";
+  padding-top: 1rem;
+  width: 100%;
+  border-bottom: 2px solid #d5d5d58e;
+}
+
+.form__group {
+  padding-block: 1rem;
+  text-align: left !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+  @include sm {
+    width: 50%;
+  }
+  //   align-items: center;
+}
+
+.label {
+  text-align: left !important;
+  font-size: 16px;
+  color: #8d8d8d;
+  font-weight: 500;
+}
+
+.group__input {
+  width: 100% !important;
+  height: 2rem;
+  border: 1px solid #bbbaba;
+  padding-inline: 0.5rem;
+}
+.group__input:focus {
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  border: 1px solid black;
+  outline: black;
+}
+
+.p-dropdown-items {
+  padding: 0.5rem;
+}
+
+.p-dropdown {
+  width: 100% !important;
+}
+
+.btn-submit {
+  width: 10rem;
+  height: 2rem;
+  cursor: pointer;
+  background-color: #c7c7c7;
+  border: 1px solid #c7c7c7;
+}
+
+.btn-submit:active {
+  background-color: #aaa9a9;
+}
+
+
+// /warranty details
