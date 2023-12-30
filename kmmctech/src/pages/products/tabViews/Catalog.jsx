@@ -8,7 +8,7 @@ function Catelog({ documents }) {
                 documents.map(doc =>
                     Object.entries(doc).map(([key, val]) =>
                         <>
-                            <h1>{key}</h1>
+                            <h1 >{key}</h1>
                             <br />
                             <div className="files">
                                 <div className="file__container">

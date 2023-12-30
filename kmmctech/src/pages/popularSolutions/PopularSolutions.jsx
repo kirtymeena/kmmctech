@@ -5,22 +5,28 @@ function PopularSolutions() {
         {
             id: 1,
             title: "Interactive Flat Panel",
-            image: "https://www.v7world.com/media/wysiwyg/ifp_home.png"
+            image: "https://www.v7world.com/media/wysiwyg/ifp_home.png",
+            navigationUrl: "/products/Interactive Flat Panel"
         },
         {
             id: 2,
-            title: "Kayboards",
-            image: "https://www.v7world.com/media/wysiwyg/headset_home.png"
+            title: "Cameras",
+            image: "https://www.v7world.com/media/wysiwyg/headset_home.png",
+            navigationUrl: "/products/Camera"
+
+
         },
         {
             id: 3,
-            title: "Cables and Adapters",
-            image: "https://www.v7world.com/media/wysiwyg/bags_home.png"
+            title: "Personal Computers",
+            image: "https://www.v7world.com/media/wysiwyg/bags_home.png",
+            navigationUrl: "/products/Personal Computers"
         },
         {
             id: 4,
-            title: "Cables and Adapters",
-            image: "https://www.v7world.com/media/wysiwyg/cables_home.png"
+            title: "Ops",
+            image: "https://www.v7world.com/media/wysiwyg/cables_home.png",
+            navigationUrl: "/products/Ops"
         },
     ]
     return (

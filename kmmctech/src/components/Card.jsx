@@ -11,7 +11,7 @@ function Card({ product }) {
             <div className="card__body">
                 <h2>{product.productId}</h2>
                 <p title={product.title}>{product.title.length > 40 ? product.title.slice(0, 40) + "..." : product.title}</p>
-                <p className="price">₹{product.price}</p>
+                <p className="price">₹{product.price.toLocaleString()}</p>
             </div>
         </section>
     )

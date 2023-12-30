@@ -34,6 +34,7 @@
   width: 100%;
   @include lg {
     width: 50%;
+    // height:30rem;
   }
   img {
     width: 100%;
@@ -45,12 +46,18 @@
 .current__image {
   margin-bottom: 2rem;
   border: 1px solid rgb(239, 239, 239);
-  //   height: 35rem;
-  //   img {
-  //     width: 100%;
-  //     height: 100%;
-  //     object-fit: cover !important;
-  //   }
+  // height: 30rem;
+  height: auto;
+  width: 100%;
+  @include lg{
+    // width:600px;
+    height:30rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+  }
 }
 .images__list {
   width: 100%;
