@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const Nav = require("../models/navigation");
+const cors = require("cors");
 
-router.get("/navItems",async(req,res)=>{
-    res.header("Access-Control-Allow-Origin", "*");
+router.get("/navItems" ,cors(),async(req,res)=>{
     try{
         const navItems = await Nav.find({});
         if(navItems){

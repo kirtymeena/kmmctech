@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const Products = require("../models/products");
 const Warranty = require("../models/warranty");
+const cors = require("cors");
 
 
 
 
-router.get("/filter", async (req, res) => {
+router.get("/filter", cors(), async (req, res) => {
   console.log("here");
-  res.header("Access-Control-Allow-Origin", "*");
   const query = req.query.q;
   if (!query) {
     return res.status(400).json({ error: 'Query parameter "q" is required' });
@@ -30,8 +30,7 @@ router.get("/filter", async (req, res) => {
 });
 
 
-router.post("/warranty", async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
+router.post("/warranty", cors(),async (req, res) => {
   try {
     const product = new Warranty(req.body);
     const savedProduct = await product.save();
@@ -42,8 +41,7 @@ router.post("/warranty", async (req, res) => {
 });
 
 
-router.get("/warranty/:serialNumber", async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
+router.get("/warranty/:serialNumber",cors(), async (req, res) => {
   try {
     const product = await Warranty.find({
       serialNumber: req.params.serialNumber,
@@ -59,8 +57,7 @@ router.get("/warranty/:serialNumber", async (req, res) => {
   }
 });
 
-router.get("/products/:category/:subCategory?", async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
+router.get("/products/:category/:subCategory?", cors(), async (req, res) => {
   try {
     let product;
     const category = req.params.category.replace(/%20/g, " ");
@@ -85,8 +82,7 @@ router.get("/products/:category/:subCategory?", async (req, res) => {
   }
 });
 
-router.get("/product/:id", async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
+router.get("/product/:id", cors(), async (req, res) => {
   try {
     const product = await Products.findById(req.params.id);
     if (product) {
@@ -100,8 +96,7 @@ router.get("/product/:id", async (req, res) => {
   }
 });
 
-router.post("/create/product", async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
+router.post("/create/product", cors(), async (req, res) => {
   try {
     const product = new Products(req.body);
     const savedProduct = await product.save();

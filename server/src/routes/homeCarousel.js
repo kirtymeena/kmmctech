@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const homecarousel = require("../models/homeCarousel");
+const cors = require("cors");
 
-router.get("/sliderImages",async(req,res)=>{
+router.get("/sliderImages",cors(),async(req,res)=>{
     try{
-        res.header("Access-Control-Allow-Origin", "*");
         const sliderData = await homecarousel.find();
         if(sliderData){
             sliderData.sort((a,b)=>a.sortOrder-b.sortOrder)

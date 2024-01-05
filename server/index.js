@@ -11,8 +11,7 @@ const port = process.env.PORT || 5000
 
 app.use(cors({
     origin:'kmmctech.vercel.app',
-    method:['POST','GET'],
-    allowedHeaders:['Access-Control-Allow-Headers']
+    method:['POST','GET']
 }))
 app.use(express.json())
 app.get("/",(req,res,next)=>{
