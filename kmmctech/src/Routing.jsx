@@ -13,6 +13,15 @@ import About from "./pages/About";
 import Warranty from "./pages/Warranty";
 import WarrantyDetails from "./pages/WarrantyDetails";
 
+
+let baseUrl = ''
+if (import.meta.env.MODE === "production") {
+  baseUrl = "https://kmmctech-v1-api.vercel.app"
+}
+else {
+  baseUrl = "http://localhost:5000/"
+}
+
 function App() {
   const [navColor, setNavColor] = useState(false)
   const navScroll = useRef(null)
@@ -37,7 +46,7 @@ function App() {
       <div className="layout" >
         {/* <header className={`nav ${navColor || location !== "/" ? 'nav-active' : ""}`}> */}
         <header className={'nav  nav-active'}>
-          <Navbar />
+          <Navbar baseUrl = {baseUrl}/>
         </header>
         <main id="main"  >
           <Outlet />
@@ -53,12 +62,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout location={window.location.pathname} />}>
           <Route path="/" element={<Home />} />
-          <Route path="/products/:category/:subCategory?" element={<ProductsList />} />
-          <Route path="/product/:id" element={<ProductsDetails />} />
+          <Route path="/products/:category/:subCategory?" element={<ProductsList baseUrl={baseUrl} />} />
+          <Route path="/product/:id" element={<ProductsDetails baseUrl={baseUrl} />} />
           <Route path="/support" element={<Contact />} />
-          <Route path="/support/warranty" element={<Warranty />} />
+          <Route path="/support/warranty" element={<Warranty baseUrl={baseUrl} />} />
           <Route path="/about-us" element={<About />} />
-          <Route path="/warranty/product/:serialNumber" element={<WarrantyDetails />} />
+          <Route path="/warranty/product/:serialNumber" element={<WarrantyDetails baseUrl={baseUrl} />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>

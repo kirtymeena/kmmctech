@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import logo from "../../assets/logo.jpeg";
 import { MegaMenu } from "primereact/megamenu";
@@ -7,7 +8,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import _ from "lodash";
 
-function Navbar() {
+function Navbar({baseUrl}) {
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState(null);
     const [filteredData, setFilteredData] = useState([]);
@@ -234,7 +235,7 @@ function Navbar() {
 
         try {
             const response = await fetch(
-                `https://kmmctech-v1-api.vercel.app/filter?q=${e.target.value}`
+                `${baseUrl}/filter?q=${e.target.value}`
             );
             const data = await response.json();
             console.log(data);

@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Dropdown } from 'primereact/dropdown';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom"
-function Warranty() {
+function Warranty({ baseUrl }) {
     const navigate = useNavigate()
     const [selectedCountry, setSelectedCountry] = useState(null)
     const [error, setError] = useState(null)
@@ -20,7 +21,7 @@ function Warranty() {
         console.log(serialNumber)
         try {
             const response = await fetch(
-                `https://kmmctech-v1-api.vercel.app/warranty/${serialNumber}`
+                `${baseUrl}/warranty/${serialNumber}`
             );
             const data = await response.json();
             if (!response.ok) {

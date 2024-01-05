@@ -1,12 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-function Contact() {
+function Contact({ baseUrl }) {
     const [serialNumber, setSerialNumber] = useState(null);
     const [productDetails, setProductDetails] = useState([]);
     const fetchProductDetails = async (serialNumber) => {
         try {
             const response = await fetch(
-                `https://kmmctech-v1-api.vercel.app/warranty/${serialNumber}`
+                `${baseUrl}/warranty/${serialNumber}`
             );
             const data = await response.json();
             console.log(data);

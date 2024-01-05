@@ -1,6 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-console.log(import.meta.env.MODE)
+let baseUrl = ''
+if(import.meta.env.MODE==="production"){
+  baseUrl = "https://kmmctech-v1-api.vercel.app"
+}
+else{
+  baseUrl = "http://localhost:5000/"
+}
 
 export const apiSlice = createApi({
   // where we're keeping the data
@@ -8,8 +13,7 @@ export const apiSlice = createApi({
 
   // how we're fetch
   baseQuery: fetchBaseQuery({
-    // baseUrl: "http://localhost:5000/",
-    baseUrl: "https://kmmctech-v1-api.vercel.app",
+    baseUrl: baseUrl,
   }),
   endpoints(builder) {
     return {
