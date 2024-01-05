@@ -6,7 +6,7 @@ export const apiSlice = createApi({
 
   // how we're fetch
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://kmmctech-v1-api.vercel.app/api/v1",
+    baseUrl: "https://kmmctech-v1-api.vercel.app",
   }),
   endpoints(builder) {
     return {

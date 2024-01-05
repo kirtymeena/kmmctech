@@ -17,9 +17,9 @@ app.use(express.json())
 app.get("/",(req,res)=>{
    res.json("server's up")
 })
-app.use("/api/v1",navigation);
-app.use("/api/v1",homeCarousel);
-app.use("/api/v1",products);
+app.use(navigation);
+app.use(homeCarousel);
+app.use(products);
 
 app.listen(port, () => {
     console.log(`server is up on ${port}`)

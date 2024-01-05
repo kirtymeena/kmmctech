@@ -6,7 +6,7 @@ function Contact() {
     const fetchProductDetails = async (serialNumber) => {
         try {
             const response = await fetch(
-                `https://kmmctech-v1-api.vercel.app/api/v1/warranty/${serialNumber}`
+                `https://kmmctech-v1-api.vercel.app/warranty/${serialNumber}`
             );
             const data = await response.json();
             console.log(data);

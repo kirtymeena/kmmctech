@@ -234,7 +234,7 @@ function Navbar() {
 
         try {
             const response = await fetch(
-                `https://kmmctech-v1-api.vercel.app/api/v1/filter?q=${e.target.value}`
+                `https://kmmctech-v1-api.vercel.app/filter?q=${e.target.value}`
             );
             const data = await response.json();
             console.log(data);
