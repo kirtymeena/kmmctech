@@ -17,7 +17,8 @@ function Navbar() {
         // {
         //     label: "Solutions",
         //     icon: "pi pi-fw pi-video",
-        //     items: [
+        //     items: [ 
+            
         //         [
         //             {
         //                 label: "Eduction Solutions",
