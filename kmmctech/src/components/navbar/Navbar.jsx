@@ -18,7 +18,7 @@ function Navbar() {
         //     label: "Solutions",
         //     icon: "pi pi-fw pi-video",
         //     items: [ 
-            
+
         //         [
         //             {
         //                 label: "Eduction Solutions",
@@ -234,7 +234,7 @@ function Navbar() {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/v1/filter?q=${e.target.value}`
+                `https://kmmctech-v1-api.vercel.app/api/v1/filter?q=${e.target.value}`
             );
             const data = await response.json();
             console.log(data);

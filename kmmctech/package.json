@@ -24,7 +24,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
-    "react-image-magnify": "^2.7.4",
     "react-redux": "^9.0.4",
     "react-router-dom": "^6.20.1",
     "sass": "^1.69.5",
@@ -40,5 +39,5 @@
     "eslint-plugin-react-refresh": "^0.4.4",
     "vite": "^5.0.0"
   },
-  "proxy": "http://localhost:5000/api/v1"
+  "proxy": "https://kmmctech-v1-api.vercel.app/"
 }

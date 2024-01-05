@@ -20,7 +20,7 @@ function Warranty() {
         console.log(serialNumber)
         try {
             const response = await fetch(
-                `http://localhost:5000/api/v1/warranty/${serialNumber}`
+                `https://kmmctech-v1-api.vercel.app/api/v1/warranty/${serialNumber}`
             );
             const data = await response.json();
             if (!response.ok) {
