@@ -3,14 +3,14 @@ const app = express();
 const router = require("express").Router();
 
 const cors = require("cors");
-require("./db/connection")
-const navigation = require("./routes/navigation");
-const homeCarousel = require("./routes/homeCarousel");
-const products = require("./routes/products");
+require("./src/db/connection")
+const navigation = require("./src/routes/navigation");
+const homeCarousel = require("./src/routes/homeCarousel");
+const products = require("./src/routes/products");
 const port = process.env.PORT || 5000
 
 app.use(cors({
-    origin:'*',
+    origin:['*'],
     method:['POST','GET']
 }))
 app.use(express.json())
