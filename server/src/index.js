@@ -10,7 +10,7 @@ const products = require("./routes/products");
 const port = process.env.PORT || 5000
 
 app.use(cors({
-    origin:'*',
+    origin:['*'],
     method:['POST','GET']
 }))
 app.use(express.json())
