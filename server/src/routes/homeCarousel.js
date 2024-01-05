@@ -3,6 +3,7 @@ const homecarousel = require("../models/homeCarousel");
 
 router.get("/sliderImages",async(req,res)=>{
     try{
+        res.header("Access-Control-Allow-Origin", "*");
         const sliderData = await homecarousel.find();
         if(sliderData){
             sliderData.sort((a,b)=>a.sortOrder-b.sortOrder)

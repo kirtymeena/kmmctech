@@ -11,11 +11,13 @@ const port = process.env.PORT || 5000
 
 app.use(cors({
     origin:'kmmctech.vercel.app',
-    method:['POST','GET']
+    method:['POST','GET'],
+    allowedHeaders:['Access-Control-Allow-Headers']
 }))
 app.use(express.json())
-app.get("/",(req,res)=>{
+app.get("/",(req,res,next)=>{
    res.json("server's up")
+   next()
 })
 app.use(navigation);
 app.use(homeCarousel);

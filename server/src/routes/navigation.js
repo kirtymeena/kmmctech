@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Nav = require("../models/navigation");
 
 router.get("/navItems",async(req,res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
     try{
         const navItems = await Nav.find({});
         if(navItems){
