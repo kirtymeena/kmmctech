@@ -30,7 +30,9 @@ function Warranty({ baseUrl }) {
             console.log(data);
             setProductDetails(data);
             setTimeout(() => {
-                navigate(`/warranty/product/${serialNumber}`, { state: data })
+                if (data) {
+                    navigate(`/warranty/product/${serialNumber}`, { state: data })
+                }
 
             }, 300)
 
@@ -43,12 +45,13 @@ function Warranty({ baseUrl }) {
     const handleSubmit = (e) => {
         console.log(serialNumber)
         e.preventDefault()
-        fetchProductDetails(serialNumber);
         if (selectedCountry.name !== "India") {
             setError("invalid Country")
+            return
         }
         else {
             setError(null)
+            fetchProductDetails(serialNumber);
             // if (productDetails.length > 0) {
 
             // }

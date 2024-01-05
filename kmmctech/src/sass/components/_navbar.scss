@@ -196,3 +196,18 @@
     object-fit: cover;
   }
 }
+
+
+
+
+/// new menu
+.p-menubar-root-list{
+  gap:1rem;
+}
+.p-menuitem-link{
+  padding:0.5rem !important;
+}
+
+.p-menubar .p-submenu-list{
+  padding:0.5rem !important;
+}

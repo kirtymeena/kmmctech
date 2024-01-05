@@ -30,7 +30,7 @@ function WarrantyDetails() {
                         <div className='coverage__wrapper'>
                             <div className='coverage__product'>
                                 <div className='prod__image'>
-                                    <img src={data.productInfo.serialNumber} />
+                                    <img src={data.productInfo.productImages.original} alt={data.productInfo.productId} />
                                 </div>
                                 <div className='coverage__info'>
                                     <p className='converage__title'>{data.productInfo.title}</p>

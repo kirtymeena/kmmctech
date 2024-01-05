@@ -1,183 +1,209 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import logo from "../../assets/logo.jpeg";
-import { MegaMenu } from "primereact/megamenu";
+import { Menubar } from 'primereact/menubar';
 import { InputText } from "primereact/inputtext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 import _ from "lodash";
 
-function Navbar({baseUrl}) {
+function Navbar({ baseUrl }) {
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState(null);
     const [filteredData, setFilteredData] = useState([]);
     const [visibleDropdown, setVisibleDropdown] = useState(false)
     const [clickedArea, setClickedArea] = useState(null)
     const items = [
-        // {
-        //     label: "Solutions",
-        //     icon: "pi pi-fw pi-video",
-        //     items: [ 
-
-        //         [
-        //             {
-        //                 label: "Eduction Solutions",
-        //                 url: "/Videos",
-        //                 items: [
-        //                     {
-        //                         label: "Classroom",
-        //                         command: () => {
-        //                             navigate(`/Education Solutions/Classroom`);
-        //                         },
-        //                     },
-        //                     {
-        //                         label: "Tech Labs",
-        //                         command: () => {
-        //                             navigate(`/Education Solutions/Tech Labs`);
-        //                         },
-        //                     },
-        //                     {
-        //                         label: "Remote Learning",
-        //                         command: () => {
-        //                             navigate(`/Education Solutions/Remote Learning`);
-        //                         },
-        //                     },
-        //                     {
-        //                         label: "Works with Chromebook",
-        //                         command: () => {
-        //                             navigate(`/Education Solutions/Works With Chromebook`);
-        //                         },
-        //                     },
-        //                 ],
-        //             },
-        //         ],
-        //         [
-        //             {
-        //                 label: "Business Solutions",
-        //                 items: [
-        //                     {
-        //                         label: "Workspace & Cubes",
-        //                         command: () => {
-        //                             navigate(`/Business Solutions/Workspace & Cubes`);
-        //                         },
-        //                     },
-        //                     {
-        //                         label: "Conference Rooms",
-        //                         command: () => {
-        //                             navigate(`/Business Solutions/Conference Rooms`);
-        //                         },
-        //                     },
-        //                     {
-        //                         label: "Remote Working", command: () => {
-        //                             navigate(`/Business Solutions/Remote Working`);
-        //                         },
-        //                     },
-        //                     {
-        //                         label: "Business Travel", command: () => {
-        //                             navigate(`/Business Solutions/Business Travel`);
-        //                         },
-        //                     },
-        //                 ],
-        //             },
-        //         ],
-        //     ],
-        // },
         {
-            label: "Products",
-            icon: "pi pi-fw pi-users",
+            label: <span style={{ fontWeight: 600 }}>Products</span>,
+            icon: 'pi pi-fw pi-file',
             items: [
-                [
-                    {
-                        label: (
-                            <Link to="products/Interactive Flat Panel" className="prod__link">
-                                Interactive Flat Panel
-                            </Link>
-                        ),
-                        items: [
-                            {
-                                label: "For Education",
-                                command: () => {
-                                    navigate(`products/Interactive Flat Panel/For Education`);
-                                },
+                {
+                    label: (
+                        <Link to="products/Interactive Flat Panel" className="prod__link">
+                            Interactive Flat Panel
+                        </Link>
+                    ),
+                    items: [
+                        {
+                            label: "For Education",
+                            command: () => {
+                                navigate(`products/Interactive Flat Panel/For Education`);
                             },
-                            {
-                                label: "For Business",
-                                command: () => {
-                                    navigate(`products/Interactive Flat Panel/For Business`);
-                                },
+                        },
+                        {
+                            label: "For Business",
+                            command: () => {
+                                navigate(`products/Interactive Flat Panel/For Business`);
                             },
-                        ],
-                    },
-                    {
-                        label: (
-                            <Link
-                                to="products/Personal Computers"
-                                className="prod__link"
-                                style={{ paddingTop: "1rem" }}
-                            >
-                                Personal Computers
-                            </Link>
-                        ),
-                        items: [],
-                    },
-                ],
-                [
-                    {
-                        label: (
-                            <Link to="products/Camera" className="prod__link">
-                                Camera
-                            </Link>
-                        ),
-                        items: [],
-                    },
-                ],
-                [
-                    {
-                        label: (
-                            <Link to="products/Ops" className="prod__link">
-                                Ops
-                            </Link>
-                        ),
-                        items: [],
-                    },
-                ],
-            ],
+                        },
+
+                    ]
+                },
+                {
+                    label: (
+                        <Link
+                            to="products/Personal Computers"
+                            className="prod__link"
+                            style={{ paddingTop: "1rem" }}
+                        >
+                            Personal Computers
+                        </Link>
+                    ),
+                },
+
+                {
+                    label: (
+                        <Link to="products/Camera" className="prod__link">
+                            Camera
+                        </Link>
+                    ),
+                },
+                {
+                    label: (
+                        <Link to="products/Ops" className="prod__link">
+                            Ops
+                        </Link>
+                    ),
+                },
+                {
+                    label: (
+                        <Link to="products/Camera" className="prod__link">
+                            Camera
+                        </Link>
+                    ),
+                }
+            ]
         },
         {
-            label: "About Us",
+            label: <span style={{ fontWeight: 600 }}>About Us</span>,
             command: () => {
                 navigate(`/about-us`);
-            },
+            }
         },
         {
-            label: "Support",
-
+            label: <span style={{ fontWeight: 600 }}>Support</span>,
             items: [
-                [
-                    {
-                        label: (
-                            <Link to="/support" className="prod__link">
-                                Support
-                            </Link>
-                        ),
-                        command: () => {
-                            navigate(`/support`);
-                        },
-                        items: [
-                            {
-                                label: (
-                                    <Link to="/support/warranty" className="prod__link">
-                                        Check Warranty
-                                    </Link>
-                                ),
-                            },
-                        ],
+                {
+                    label: (
+                        <Link to="/support" className="prod__link">
+                            Support
+                        </Link>
+                    ),
+                    command: () => {
+                        navigate(`/support`);
                     },
-                ],
-            ],
+                },
+                {
+                    label: (
+                        <Link to="/support/warranty" className="prod__link">
+                            Check Warranty
+                        </Link>
+                    ),
+                },
+
+            ]
         },
     ];
+
+    // const items = [
+    //     {
+    //         label: "Products",
+    //         icon: "pi pi-fw pi-users",
+    //         items: [
+    //             [
+    //                 {
+    //                     label: (
+    //                         <Link to="products/Interactive Flat Panel" className="prod__link">
+    //                             Interactive Flat Panel
+    //                         </Link>
+    //                     ),
+    //                     items: [
+    //                         {
+    //                             label: "For Education",
+    //                             command: () => {
+    //                                 navigate(`products/Interactive Flat Panel/For Education`);
+    //                             },
+    //                         },
+    //                         {
+    //                             label: "For Business",
+    //                             command: () => {
+    //                                 navigate(`products/Interactive Flat Panel/For Business`);
+    //                             },
+    //                         },
+    //                     ],
+    //                 },
+    //                 {
+    //                     label: (
+    //                         <Link
+    //                             to="products/Personal Computers"
+    //                             className="prod__link"
+    //                             style={{ paddingTop: "1rem" }}
+    //                         >
+    //                             Personal Computers
+    //                         </Link>
+    //                     ),
+    //                     items: [],
+    //                 },
+    //             ],
+    //             [
+    //                 {
+    //                     label: (
+    //                         <Link to="products/Camera" className="prod__link">
+    //                             Camera
+    //                         </Link>
+    //                     ),
+    //                     items: [],
+    //                 },
+    //             ],
+    //             [
+    //                 {
+    //                     label: (
+    //                         <Link to="products/Ops" className="prod__link">
+    //                             Ops
+    //                         </Link>
+    //                     ),
+    //                     items: [],
+    //                 },
+    //             ],
+    //         ],
+    //     },
+    //     {
+    //         label: "About Us",
+    //         command: () => {
+    //             navigate(`/about-us`);
+    //         },
+    //     },
+    //     {
+    //         label: "Support",
+
+    //         items: [
+    //             [
+    //                 {
+    //                     label: (
+    //                         <Link to="/support" className="prod__link">
+    //                             Support
+    //                         </Link>
+    //                     ),
+    //                     command: () => {
+    //                         navigate(`/support`);
+    //                     },
+    //                     items: [
+    //                         {
+    //                             label: (
+    //                                 <Link to="/support/warranty" className="prod__link">
+    //                                     Check Warranty
+    //                                 </Link>
+    //                             ),
+    //                         },
+    //                     ],
+    //                 },
+    //             ],
+    //         ],
+    //     },
+    // ];
     const start = (
         <Link to="/">
             <img alt="logo" src={logo} height="40" className="mr-2"></img>
@@ -250,10 +276,10 @@ function Navbar({baseUrl}) {
     return (
         <nav className="nav__container container">
             {
-                <MegaMenu
+                <Menubar
                     model={items}
                     onClick={(e) => handleNavigation(e, e.target.textContent)}
-                    orientation="horizontal"
+                    // orientation="horizontal"
                     start={start}
                     end={end}
                     breakpoint="926px"

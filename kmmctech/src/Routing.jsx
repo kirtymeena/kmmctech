@@ -19,7 +19,7 @@ if (import.meta.env.MODE === "production") {
   baseUrl = "https://kmmctech-v1-api.vercel.app"
 }
 else {
-  baseUrl = "http://localhost:5000/"
+  baseUrl = "http://localhost:5000"
 }
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
       <div className="layout" >
         {/* <header className={`nav ${navColor || location !== "/" ? 'nav-active' : ""}`}> */}
         <header className={'nav  nav-active'}>
-          <Navbar baseUrl = {baseUrl}/>
+          <Navbar baseUrl={baseUrl} />
         </header>
         <main id="main"  >
           <Outlet />
