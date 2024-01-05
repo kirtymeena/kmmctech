@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-console.log(window.location.href);
+
+console.log(import.meta.env.MODE)
+
 export const apiSlice = createApi({
   // where we're keeping the data
   reducerPath: "api",
