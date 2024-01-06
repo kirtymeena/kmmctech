@@ -34,7 +34,7 @@ function Slider() {
                 {
                     data && data.map((sliderData, idx) =>
                         <div key={sliderData._id}>
-                            <img className="sliderImg1" src={sliderData.imageUrl} />
+                            <img className="sliderImg1" src={sliderData.imageUrl} loading="lazy"/>
                             <div className="home__links">
                                 {
                                     idx === 0 ? <Link className="link slider__link" to="/products/Interactive Flat Panel/For Education">Education Solution <MdArrowForwardIos className="arrow " /></Link> : <Link to="products/Interactive Flat Panel/For Business" className="slider__link">Business Solution <MdArrowForwardIos className="arrow" /></Link>

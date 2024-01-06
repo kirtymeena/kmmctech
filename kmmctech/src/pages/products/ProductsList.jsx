@@ -4,11 +4,12 @@ import { useEffect } from "react"
 import Card from "../../components/Card"
 import { Link } from "react-router-dom"
 import Filters from "../filters/Filters"
+import Loading from "../../components/Loading"
 function ProductsList() {
     const location = useLocation()
     // const [filterOptions, setFilterOptions] = useState([])
     const category = location.pathname.split("/").length === 4 ? location.pathname.split("/")[2] + '/' + location.pathname.split("/")[3] : location.pathname.split("/")[2]
-    const { data } = useFetchProductsByCategoryQuery(category)
+    const { data, isLoading } = useFetchProductsByCategoryQuery(category)
 
 
     useEffect(() => {
@@ -71,28 +72,30 @@ function ProductsList() {
         }
     }
     return (
-        <div className="products__wrapper">
+        !isLoading ?
+            <div className="products__wrapper">
 
-            <div className="products__hero">
-                {displayImages()}
-            </div>
-            <div className="products__body">
-                {/* <div className="products__filter">
+                <div className="products__hero">
+                    {displayImages()}
+                </div>
+                <div className="products__body">
+                    {/* <div className="products__filter">
                     <Filters options={filterOptions} onFilterSelection={onFilterSelection} />
                 </div> */}
-                <div className="product__container">
-                    <div className="products__list">
-                        {
-                            data && data.map(product =>
-                                <>
-                                    <Link to={`/product/${product._id}`} className="link color-inherit"><Card product={product} /></Link >
-                                </>
-                            )
-                        }
+                    <div className="product__container">
+                        <div className="products__list">
+                            {
+                                data && data.map(product =>
+                                    <>
+                                        <Link to={`/product/${product._id}`} className="link color-inherit"><Card product={product} /></Link >
+                                    </>
+                                )
+                            }
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div >
+            </div > :
+            <Loading />
     )
 }
 
