@@ -33,7 +33,7 @@ function ProductsDetails() {
     return (
         !isFetching && product ?
             <>
-                <BlockUI blocked={blocked}>
+                {/* <BlockUI blocked={blocked}> */}
                     <div className={`pd__main container ${selectedImage ? "no-scroll" : ""}`}>
 
                         <div className='pd__wrapper'>
@@ -111,10 +111,10 @@ function ProductsDetails() {
                         </div>
 
                     </div>
-                </BlockUI>
+                {/* </BlockUI> */}
                 <div>
                     {
-                        fullScreenImg && selectedImage ? <FullScreen imageUrl={selectedImage} /> : null
+                        fullScreenImg && selectedImage ? <FullScreen blocked={blocked} setBlocked = {setBlocked} imageUrl={selectedImage}/> : null
                     }
                 </div>
             </>
