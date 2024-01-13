@@ -89,8 +89,8 @@ function ProductsDetails() {
                                 <div className='pd__price price'>
                                     ₹{product.price.toLocaleString()}
                                 </div>
-                                <div className='pd__description'>
-                                    {product.description}
+                                <div className='pd__description' dangerouslySetInnerHTML={{__html:product.description}}>
+                                    {/* {product.description} */}
                                 </div>
                             </div>
                         </div>
